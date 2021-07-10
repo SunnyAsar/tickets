@@ -14,7 +14,7 @@ Tickets is a minial implementation of a event ticketing app usign Rails and Tail
 
 ## Live Demo
 
-[Live Demo Link](https://heey.com/)
+[Live Demo Link](https://tickets-app.herokuapp.com/)
 
 
 ## Getting Started

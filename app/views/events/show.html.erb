@@ -6,7 +6,7 @@
   <div class="flex ">
     <h1 class="text-center text-gray-500 mb-4 text-2xl"> <%= "#{@event.duration}hrs" %></h1>
 
-    <% if user_signed_in? && current_user === @even.user %>
+    <% if user_signed_in? and current_user == @event.user %>
       <% unless @event.published? %>
         <%= link_to "Publish", publish_event_path(@event), method: :post, class: "text-sm ml-3 px-6 py-2 bg-green-300 rounded-lg text-white" %>
       <% else %>
