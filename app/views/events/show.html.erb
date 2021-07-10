@@ -4,11 +4,14 @@
 <div class="flex justify-between">
 <h1 class="text-center text-indigo-300 text-3xl"> <%= @event.name %></h1>
   <div class="flex ">
-    <h1 class="text-center text-gray-500 text-2xl"> <%= "#{@event.duration}hrs" %></h1>
-    <% unless @event.published? %>
-      <%= link_to "Publish", publish_event_path(@event), method: :post, class: "text-lg ml-3 px-6 py-2 bg-green-300 rounded-lg text-white" %>
-    <% else %>
-      <%= link_to "Unpublish" ,  unpublish_event_path(@event), method: :post, class: "text-lg ml-3 px-6 py-2 bg-indigo-500 rounded-lg text-white" %>
+    <h1 class="text-center text-gray-500 mb-4 text-2xl"> <%= "#{@event.duration}hrs" %></h1>
+
+    <% if user_signed_in? && current_user === @even.user %>
+      <% unless @event.published? %>
+        <%= link_to "Publish", publish_event_path(@event), method: :post, class: "text-sm ml-3 px-6 py-2 bg-green-300 rounded-lg text-white" %>
+      <% else %>
+        <%= link_to "Unpublish" ,  unpublish_event_path(@event), method: :post, class: "text-xs ml-3 px-6 py-2 bg-indigo-500 rounded-lg text-white" %>
+      <% end %>
     <% end %>
 
   </div>
@@ -48,12 +51,6 @@
     <%= @event.address %>
   </span>
 </p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
-
-
-
   </div>
 
 </div>

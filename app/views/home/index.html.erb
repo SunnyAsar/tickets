@@ -1,2 +1,16 @@
-<h1 class="text-red-400">Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container mx-auto  w-full">
+  <div class="">
+    <h1 class="text-indigo-500 text-2xl mt-3"> Events</h1>
+      <div class="flex flex-wrap justify-center"> 
+        <% @events.each do |event| %>
+            <div class="bg-indigo-400 rounded-lg p-5 text-white max-w-xs my-4 mx-2 w-6/12">
+              <h1 class="text-3xl text-center font-black-500"> <%= event.name %> </h1>
+              <p class="mt-4 font-tight text-center mb-4">
+                <%= truncate(event.description, length: 50) %>
+              </p>
+              <%= button_to 'View', event_path(event), method: :get, class:"rounded-lg bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 px-4 py-2 w-full" %>
+            </div>
+        <%end %>
+      </div>
+  </div>
+</div>

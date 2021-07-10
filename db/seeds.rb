@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+include FactoryBot::Syntax::Methods
+
+3.times do |n|
+  create(:user, email: "user#{n}@gmail.com") do |user|
+    2.times do |i|
+      create(:event, name: "Event #{i} showdown", user_id: user.id, status: :published)
+    end
+  end
+end
