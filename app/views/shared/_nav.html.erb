@@ -11,6 +11,7 @@
     <div>
       <%= link_to 'Home', root_path, class: "block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent  hover:bg-indigo-600 mt-4 md:mt-0" %>
       <% unless user_signed_in? %>
+        <%= link_to 'Log in', new_user_session_path, class: "block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:bg-indigo-600 mt-4 md:mt-0" %>
         <%= link_to 'Sign up', new_user_registration_path, class: "block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:bg-indigo-600 mt-4 md:mt-0" %>
 
       <% else %>
