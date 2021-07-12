@@ -1,5 +1,5 @@
 # Ticket
-Accountable a way to handle and make sense of your finances.
+
 
 
 
